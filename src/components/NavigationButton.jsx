@@ -29,7 +29,7 @@ export default function NaviagtionButton() {
   return (
       <SpeedDial
         ariaLabel="Navigation"
-        sx={{ position: 'absolute', top: 16, left: 16 }}
+        sx={{ position: 'fixed', top: '4%', left: '2%' }}
         icon={<MenuIcon />}
         
         direction="right"

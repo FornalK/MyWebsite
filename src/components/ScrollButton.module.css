@@ -1,0 +1,17 @@
+.scrollDownButton {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.scrollUpButton {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    bottom: -14%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

@@ -30,11 +30,7 @@ function AnimatedText({text, delay, styleNumber}) {
     style = (styleNumber == 0) ? styles.welcome : styles.info // Select a text style
 
 
-    return (
-        <div>
-            <div ref={divRef} id={style} ></div>
-        </div>
-    );
+    return (<div ref={divRef} id={style} ></div>);
 }
 
 export default AnimatedText;

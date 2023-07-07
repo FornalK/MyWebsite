@@ -27,10 +27,11 @@ function AnimatedText({text, delay, styleNumber}) {
 
     if (!showText) return null // don't render anything until the specified time has passed
     
-    style = (styleNumber == 0) ? styles.welcome : styles.info // Select a text style
+    // Select a text style
+    style = (styleNumber == 0) ? styles.welcome : styles.info 
+    if (styleNumber == 2) style = styles.welcomeFirst
 
-
-    return (<div ref={divRef} id={style} ></div>);
+    return (<div ref={divRef} className={style} ></div>);
 }
 
 export default AnimatedText;

@@ -1,18 +1,14 @@
-#welcome {
+
+
+.welcome, .info {
     color: #ffb303;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 48pt;
-    margin: 10% 4% 2% 10%;
-    width: 42%;
-    padding: 0;
+    margin: 0% 0% 0% 20%;
+    width: 80%;
 }
 
-#info {
+.info {
     color: black;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 48pt;
-    margin: 0% 4% 2% 10%;
-    width: 42%;
 }

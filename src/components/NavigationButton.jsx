@@ -6,17 +6,20 @@ import ContactPageIcon from '@mui/icons-material/ContactPage';
 import FaceIcon from '@mui/icons-material/Face';
 import LanguageIcon from '@mui/icons-material/Language';
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const actions = [
-  { icon: <RoofingIcon />, name: 'Home' },
-  { icon: <ContactPageIcon />, name: 'Contact' },
-  { icon: <FaceIcon />, name: 'About' },
+  { icon: <RoofingIcon />, name: 'Home', link: '/' },
+  { icon: <ContactPageIcon />, name: 'Contact', link: '/contact' },
+  { icon: <FaceIcon />, name: 'About', link: '/about' },
 ];
 
 let languageAction = {icon: <LanguageIcon />, name: 'Change to Polish'}
 
 export default function NaviagtionButton() {
+  const navigate = useNavigate();
   const [language, setLanguage] = useState('en')  
+
   function changeLanguage(event) {
     if (language === 'en') {
       languageAction.name = 'Change to English'
@@ -26,12 +29,16 @@ export default function NaviagtionButton() {
       setLanguage('en')
     }
   }
+
+  function route(path) {
+    navigate(path)
+  }
+
   return (
       <SpeedDial
         ariaLabel="Navigation"
         sx={{ position: 'fixed', top: '4%', left: '2%' }}
         icon={<MenuIcon />}
-        
         direction="right"
       >
         {actions.map((action) => (
@@ -39,6 +46,7 @@ export default function NaviagtionButton() {
             key={action.name}
             icon={action.icon}
             tooltipTitle={action.name}
+            onClick={() => route(action.link)}
           />
         ))}
         <SpeedDialAction

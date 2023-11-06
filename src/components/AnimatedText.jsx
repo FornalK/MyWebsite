@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import styles from './AnimatedText.module.css'
 
-function AnimatedText({text, delay, styleNumber}) {
+function AnimatedText({text, delay, styleNumber, speed, size}) {
     const divRef = useRef(null);
     const [showText, setShowText] = useState(false);
     useEffect(() => {
@@ -14,7 +14,6 @@ function AnimatedText({text, delay, styleNumber}) {
     }, [showText]);
 
     let i = 0;
-    let speed = 65; /* The speed/duration of the effect in milliseconds */
     let style = null
 
     function typeWriter() {
@@ -31,7 +30,7 @@ function AnimatedText({text, delay, styleNumber}) {
     style = (styleNumber == 0) ? styles.welcome : styles.info 
     if (styleNumber == 2) style = styles.welcomeFirst
 
-    return (<div ref={divRef} className={style} ></div>);
+    return (<div ref={divRef} className={style} style={{fontSize: size}} ></div>);
 }
 
 export default AnimatedText;

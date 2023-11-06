@@ -14,7 +14,7 @@ function ProjectCardList() {
     );
 
     return (
-        <Container maxWidth="xl" >
+        <Container maxWidth="xl"  >
             <div id="XD" style={{margin: 'auto'}}>
                 {cards}
             </div>

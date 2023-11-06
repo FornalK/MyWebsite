@@ -6,10 +6,11 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import emailjs from '@emailjs/browser';
 import Slide from '@mui/material/Slide';
-
+import { useTranslation } from 'react-i18next'
 
 
 const EmailContactForm = ({delay}) => {
+ const { t } = useTranslation();
  const form = useRef();
  const [showForm, setShowForm] = useState(false);
  useEffect(() => {
@@ -49,20 +50,20 @@ const EmailContactForm = ({delay}) => {
                         <TextField
                             type="email"
                             name="email"
-                            label="Your email"
+                            label={t('formLabel1')}
                             color="primary"
                             focused 
                             />
                         <TextField 
                             type="text" 
                             name="subject"
-                            label="Subject"
+                            label={t('formLabel2')}
                             color="primary"
                             focused  />
                         <TextField 
                             type="text" 
                             name="message"
-                            label="Message"
+                            label={t('formLabel3')}
 
                             color="primary"
                             multiline
@@ -73,7 +74,7 @@ const EmailContactForm = ({delay}) => {
                             width: '200px', 
                             margin: 'auto'
                         }}>
-                            Send
+                            {t('formSubmit')}
                         </Button>
                     </Box>
             </form>

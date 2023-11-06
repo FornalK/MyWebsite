@@ -1,6 +1,11 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import NaviagtionButton from "../components/NavigationButton";
 import { Outlet } from "react-router-dom";
+import { Suspense } from 'react';
+import Loading from '../components/Loading';
+import LangContext from '../LocaleContext';
+import { useState } from 'react'; 
+import i18n from '../i18n';
 
 const theme = createTheme({
     palette: {
@@ -29,10 +34,16 @@ const theme = createTheme({
   });
 
 function RootLayout() {
+    const [locale, setLocale] = useState(i18n.language)
+    i18n.changeLanguage('en')
     return (
         <ThemeProvider theme={theme}>
-            <NaviagtionButton />
-            <Outlet />
+          <LangContext.Provider value={{locale, setLocale}}> 
+            <Suspense fallback={<Loading />}>
+              <NaviagtionButton />
+              <Outlet />
+            </Suspense>
+          </LangContext.Provider>
         </ThemeProvider>
     );
 }

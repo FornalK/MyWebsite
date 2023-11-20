@@ -2,6 +2,10 @@ import { useMediaQuery } from "react-responsive";
 import styles from './AboutPage.module.css';
 import { Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
+import Zoom from '@mui/material/Zoom';
+import Fade from '@mui/material/Fade';
+
+const start = true;
 
 function AboutPage() {
     const { t } = useTranslation();
@@ -38,26 +42,34 @@ function AboutPage() {
     );
     
     return (
-        <div className={styles.common}>
-            {isBigScreen && <div className={styles.bigScreen}>
-                <h2>{t('aboutH1')}</h2>
-                {t('aboutC1')}
+        <div className={styles.bg}>
+            <Zoom in={start} style={{ transitionDelay: start ? '300ms' : '0ms' }}>
+                <div className={styles.texts}>
+                    <Fade in={start} style={{ transitionDelay: start ? '600ms' : '0ms' }}>
+                        <div>
+                            {isBigScreen && <div className={styles.bigScreen}>
+                                <h2>{t('aboutH1')}</h2>
+                                {t('aboutC1')}
 
-                {prof_skills}
- 
-            </div>}
+                                {prof_skills}
+                
+                            </div>}
 
-            {isLaptopL && <div className={styles.laptopL}>
-                {texts[0]}
-            </div>}
+                            {isLaptopL && <div className={styles.laptopL}>
+                                {texts[0]}
+                            </div>}
 
-            {isLaptop && <div className={styles.laptop}>
-                {texts[0]}
-            </div>}
+                            {isLaptop && <div className={styles.laptop}>
+                                {texts[0]}
+                            </div>}
 
-            {isMobile && <div className={styles.mobile}>
-                {texts[0]}
-            </div>}
+                            {isMobile && <div className={styles.mobile}>
+                                {texts[0]}
+                            </div>}
+                        </div>
+                    </Fade>
+                </div>
+            </Zoom>
         </div>
         
         

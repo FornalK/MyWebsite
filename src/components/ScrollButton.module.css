@@ -11,7 +11,7 @@
     margin: 0;
     position: absolute;
     left: 50%;
-    bottom: -14%;
+    top: 7%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }

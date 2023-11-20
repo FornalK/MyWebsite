@@ -1,17 +1,32 @@
 import { Box } from '@mui/material';
 import { Container } from '@mui/material';
-import avatar from '../assets/av.png'
+import avatar1 from '../assets/av2.png'
+import avatar2 from '../assets/av3.png'
 import styles from './Avatar.module.css'
 import Slide from '@mui/material/Slide';
 
-
 const start = true;
 
-function Avatar() {
+function Avatar({ava_num}) {
+    let ava = null;
+    let ava_style = null;
+    let slide_direction = null;
+    
+    if (ava_num == 0) {
+        ava = avatar1
+        ava_style = styles.avatar1
+        slide_direction = 'left'
+    } else {
+        ava = avatar2
+        ava_style = styles.avatar2
+        slide_direction = 'up'
+    }
+    
+    
     return(
         <Container>
-            <Slide direction='left' in={start} mountOnEnter unmountOnExit>
-                <img className={styles.avatar} src={avatar} alt="Avatar"></img>
+            <Slide direction={slide_direction} in={start} timeout={500} mountOnEnter unmountOnExit>
+                <img className={ava_style} src={ava} alt="Avatar"></img>
             </Slide>
         </Container>  
     );

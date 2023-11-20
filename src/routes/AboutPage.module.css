@@ -1,6 +1,22 @@
-.common {
-    margin-top: 200px;
+.bg{
+    background-image: url("../assets/bg5.png");
+    height: 100%;
+    width: 100%;
+    position: fixed;
 }
+
+.texts{
+    width: 78%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    -webkit-box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
+  }
 
 .skills {
     

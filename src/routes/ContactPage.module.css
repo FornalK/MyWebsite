@@ -7,7 +7,22 @@
     text-align: center;
 }
 
-.texts {
-    width: 100%;
-    margin-top: 16%;
+.texts{
+    width: 60%;
+    padding: 10px;
+    margin: auto auto;
+    margin-bottom: 30px;
+    min-height: 267px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    -webkit-box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
   }
+
+.bg {
+    background-image: url("../assets/bg3.png");
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}

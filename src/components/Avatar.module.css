@@ -1,7 +1,17 @@
-.avatar {
-  width: 500px;
+.avatar1 {
+  width: 250px;
   display: block;
   height: auto;  
-  margin: 0 auto;
-  margin-top: 200px;
+  position: absolute;
+  right: 0px;
+  top: 25%;
+}
+
+.avatar2 {
+  width: 250px;
+  display: block;
+  height: auto;  
+  position: absolute;
+  right: 22%;
+  bottom: 0%;
 }

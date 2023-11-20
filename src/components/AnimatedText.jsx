@@ -14,7 +14,7 @@ function AnimatedText({text, delay, styleNumber, speed, size}) {
     }, [showText]);
 
     let i = 0;
-    let style = null
+    let style = null;
 
     function typeWriter() {
         if (i < text.length) {

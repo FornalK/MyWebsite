@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 1);
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/sakura.png");
+  background-image: url("./assets/bg1.png");
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,14 +16,34 @@
 
 body {
   overflow: hidden; /* Hide scrollbars */
+  margin: 0px;
+  height: 100%;
 }
 
 .top-of-page, .bottom-of-page {
   margin: 0;
-  overflow: auto;
+  overflow: hidden;
+  position: relative;
 }
 
-.texts, .cards {
+.bottom-of-page {
+  background-image: url("./assets/bg2.png");
+}
+
+.cards {
   width: 100%;
   margin-top: 16%;
+}
+
+
+.texts_home{
+  width: 88%;
+  margin-top: 14%;
+  margin-left: 10%;
+  min-height: 530px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+  -webkit-box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
 }

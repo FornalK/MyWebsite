@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import LangContext from '../LocaleContext';
 import { useContext } from 'react';
 import i18n from '../i18n';
+import { useTranslation } from 'react-i18next'
+import { useLocation } from 'react-router-dom';
 
 const actions = [
   { icon: <RoofingIcon />, name: 'Home', link: '/' },
@@ -17,23 +19,27 @@ const actions = [
   { icon: <FaceIcon />, name: 'About', link: '/about' },
 ];
 
-let languageAction = {icon: <LanguageIcon />, name: 'Change to Polish'}
+let languageAction = {icon: <LanguageIcon />, name: 'Change'}
 
 export default function NaviagtionButton() {
+  const { t } = useTranslation();
   const { locale } = useContext(LangContext);
   const navigate = useNavigate();
-  const [language, setLanguage] = useState('en')  
+  const [language, setLanguage] = useState(localStorage.getItem("lang"));
+
+  const location = useLocation();
 
   function changeLanguage(event) {
     if (language === 'en') {
-      languageAction.name = 'Zmień na Angielski'
       setLanguage('pl')
       i18n.changeLanguage('pl')
+      localStorage.setItem("lang", "pl");
     } else {
-      languageAction.name = 'Change to Polish'
       setLanguage('en')
       i18n.changeLanguage('en')
+      localStorage.setItem("lang", "en");
     }
+    if (location.pathname == '/' || location.pathname == '/contact') window.location.reload(false);
   }
 
   function route(path) {
@@ -51,14 +57,14 @@ export default function NaviagtionButton() {
           <SpeedDialAction
             key={action.name}
             icon={action.icon}
-            tooltipTitle={action.name}
+            tooltipTitle={t(action.name)}
             onClick={() => route(action.link)}
           />
         ))}
         <SpeedDialAction
             key={languageAction.name}
             icon={languageAction.icon}
-            tooltipTitle={languageAction.name}
+            tooltipTitle={t(languageAction.name)}
             onClick={changeLanguage}
         />
       </SpeedDial>

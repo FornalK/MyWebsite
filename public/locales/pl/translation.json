@@ -15,5 +15,9 @@
     "formLabel1": "Twój email",
     "formLabel2": "Temat",
     "formLabel3": "Treść wiadomości",
-    "formSubmit": "Wyślij"
+    "formSubmit": "Wyślij",
+    "Home": "Strona główna",
+    "Contact": "Kontakt",
+    "About": "O mnie",
+    "Change": "Zmień na Angielski"
 }

@@ -12,6 +12,7 @@ const start = true;
 
 function App() {
   const { t } = useTranslation();
+  console.log(localStorage.getItem("lang"));
   return (
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={1}>

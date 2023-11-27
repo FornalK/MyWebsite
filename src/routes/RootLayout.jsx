@@ -35,7 +35,12 @@ const theme = createTheme({
 
 function RootLayout() {
     const [locale, setLocale] = useState(i18n.language)
-    i18n.changeLanguage('en')
+    if (localStorage.getItem("lang") == 'pl') {
+      i18n.changeLanguage('pl');
+    } else {
+      i18n.changeLanguage('en');
+    }
+
     return (
         <ThemeProvider theme={theme}>
           <LangContext.Provider value={{locale, setLocale}}> 

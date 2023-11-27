@@ -15,6 +15,9 @@
     "formLabel1": "Your email",
     "formLabel2": "Subject",
     "formLabel3": "Message",
-    "formSubmit": "Send"
-
+    "formSubmit": "Send",
+    "Home": "Home",
+    "Contact": "Contact",
+    "About": "About",
+    "Change": "Change to Polish"
 }

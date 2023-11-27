@@ -29,13 +29,13 @@ function ContactPage() {
                 <Zoom in={start} style={{ transitionDelay: start ? '300ms' : '0ms' }}>
                     <div className={styles.texts}>
                         <AnimatedText text={t('contact1')} delay={400} styleNumber={1} speed={40} size={42}/>
-                        <AnimatedText text={texts[0]} delay={800} styleNumber={0} speed={40} size={26}/>
-                        <AnimatedText text={texts[1]} delay={1700} styleNumber={0} speed={40} size={26}/>
-                        <AnimatedText text={t('contact2')} delay={2300} styleNumber={1} speed={40} size={42}/>
+                        <AnimatedText text={texts[0]} delay={900} styleNumber={0} speed={40} size={26}/>
+                        <AnimatedText text={texts[1]} delay={1800} styleNumber={0} speed={40} size={26}/>
+                        <AnimatedText text={t('contact2')} delay={2400} styleNumber={1} speed={40} size={42}/>
                     </div>
                 </Zoom>
             </Container>
-            <EmailContactForm delay={6700}/>
+            <EmailContactForm delay={6800}/>
         </Fragment>
     );
     

@@ -7,6 +7,7 @@ import Container from '@mui/material/Container';
 import emailjs from '@emailjs/browser';
 import Slide from '@mui/material/Slide';
 import { useTranslation } from 'react-i18next'
+import styles from './EmailContactForm.module.css'
 
 
 const EmailContactForm = ({delay}) => {
@@ -74,7 +75,7 @@ const EmailContactForm = ({delay}) => {
                             width: '200px', 
                             margin: 'auto'
                         }}>
-                            {t('formSubmit')}
+                            <span className={styles.font_style}>{t('formSubmit')}</span>
                         </Button>
                     </Box>
             </form>

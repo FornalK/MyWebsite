@@ -68,7 +68,7 @@ function App() {
       <div className="bottom-of-page" style={{height: 920, marginTop: 20}}>
         <ScrollButton direction="up"/>
         <div className="cards" style={{marginTop: 190}}>
-          <ProjectCardList cardWidth={400} cardHeight={250} />
+          <h2>Tutaj będą karty projektów</h2>
         </div>
       </div>
     </Box>

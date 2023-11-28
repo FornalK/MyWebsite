@@ -27,6 +27,7 @@ function ContactPage() {
     let orange_texts_size = 26;
     let texts_box_height = 267;
     let texts_box_width = '60%';
+    let form_width = '35%';
 
     if (isLaptopL) {
         black_texts_size = 40;
@@ -34,12 +35,14 @@ function ContactPage() {
     } else if (isLaptop) {
         black_texts_size = 28;
         orange_texts_size = 18;
-        texts_box_size = 182;
+        texts_box_height = 182;
+        form_width = '45%'
     } else if (isMobile) {
         black_texts_size = 17;
         orange_texts_size = 13;
-        texts_box_size = 120;
+        texts_box_height = 120;
         texts_box_width = '80%';
+        form_width = '70%'
     }
 
     let content = (
@@ -54,7 +57,7 @@ function ContactPage() {
                     </div>
                 </Zoom>
             </Container>
-            <EmailContactForm delay={6800}/>
+            <EmailContactForm delay={6800} formWidth={form_width}/>
         </Fragment>
     );
     
@@ -70,21 +73,21 @@ function ContactPage() {
                 {isLaptopL && 
                     <div style={{color: "#000000", marginTop: 135}}>
                         {content}
-                        <Avatar ava_num={1} ava_size={200}/>
+                        <Avatar ava_num={1} ava_size={180}/>
                     </div>
                 }
                     
                 {isLaptop && 
                     <div style={{color: "#000000", marginTop: 135}}>
                         {content}
-                        <Avatar ava_num={1} ava_size={150}/>
+                        <Avatar ava_num={1} ava_size={130}/>
                     </div>
                 }
 
                 {isMobile && 
                     <div style={{color: "#000000", marginTop: 135}}>
                         {content}
-                        <Avatar ava_num={1} ava_size={100}/>
+                        <Avatar ava_num={1} ava_size={80}/>
                     </div>
                 }
                 

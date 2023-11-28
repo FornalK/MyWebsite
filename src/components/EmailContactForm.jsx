@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next'
 import styles from './EmailContactForm.module.css'
 
 
-const EmailContactForm = ({delay}) => {
+const EmailContactForm = ({delay, formWidth}) => {
  const { t } = useTranslation();
  const form = useRef();
  const [showForm, setShowForm] = useState(false);
@@ -43,7 +43,7 @@ const EmailContactForm = ({delay}) => {
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
-                        width: '400px',
+                        width: formWidth,
                         margin: 'auto',
                         '& .MuiTextField-root': { m: 1 },
                     }}

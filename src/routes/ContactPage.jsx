@@ -25,7 +25,8 @@ function ContactPage() {
 
     let black_texts_size = 42;
     let orange_texts_size = 26;
-    let texts_box_size = 267;
+    let texts_box_height = 267;
+    let texts_box_width = '60%';
 
     if (isLaptopL) {
         black_texts_size = 40;
@@ -38,13 +39,14 @@ function ContactPage() {
         black_texts_size = 17;
         orange_texts_size = 13;
         texts_box_size = 120;
+        texts_box_width = '80%';
     }
 
     let content = (
         <Fragment>
             <Container className={styles.info}>
                 <Zoom in={start} style={{ transitionDelay: start ? '300ms' : '0ms' }}>
-                    <div className={styles.texts} style={{minHeight: texts_box_size}}>
+                    <div className={styles.texts} style={{minHeight: texts_box_height, width: texts_box_width}}>
                         <AnimatedText text={t('contact1')} delay={400} styleNumber={1} speed={40} size={black_texts_size}/>
                         <AnimatedText text={texts[0]} delay={900} styleNumber={0} speed={40} size={orange_texts_size}/>
                         <AnimatedText text={texts[1]} delay={1800} styleNumber={0} speed={40} size={orange_texts_size}/>

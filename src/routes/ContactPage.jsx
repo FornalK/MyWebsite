@@ -23,15 +23,32 @@ function ContactPage() {
     const isLaptop = useMediaQuery({ query: '(min-width: 768px) and (max-width: 1023px)' });
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
+    let black_texts_size = 42;
+    let orange_texts_size = 26;
+    let texts_box_size = 267;
+
+    if (isLaptopL) {
+        black_texts_size = 40;
+        orange_texts_size = 24;
+    } else if (isLaptop) {
+        black_texts_size = 28;
+        orange_texts_size = 18;
+        texts_box_size = 182;
+    } else if (isMobile) {
+        black_texts_size = 17;
+        orange_texts_size = 13;
+        texts_box_size = 120;
+    }
+
     let content = (
         <Fragment>
             <Container className={styles.info}>
                 <Zoom in={start} style={{ transitionDelay: start ? '300ms' : '0ms' }}>
-                    <div className={styles.texts}>
-                        <AnimatedText text={t('contact1')} delay={400} styleNumber={1} speed={40} size={42}/>
-                        <AnimatedText text={texts[0]} delay={900} styleNumber={0} speed={40} size={26}/>
-                        <AnimatedText text={texts[1]} delay={1800} styleNumber={0} speed={40} size={26}/>
-                        <AnimatedText text={t('contact2')} delay={2400} styleNumber={1} speed={40} size={42}/>
+                    <div className={styles.texts} style={{minHeight: texts_box_size}}>
+                        <AnimatedText text={t('contact1')} delay={400} styleNumber={1} speed={40} size={black_texts_size}/>
+                        <AnimatedText text={texts[0]} delay={900} styleNumber={0} speed={40} size={orange_texts_size}/>
+                        <AnimatedText text={texts[1]} delay={1800} styleNumber={0} speed={40} size={orange_texts_size}/>
+                        <AnimatedText text={t('contact2')} delay={2400} styleNumber={1} speed={40} size={black_texts_size}/>
                     </div>
                 </Zoom>
             </Container>
@@ -41,14 +58,34 @@ function ContactPage() {
     
     return (
             <div className={styles.bg}>
-                <div style={{color: "#000000", marginTop: 135}}>
-                    {content}
-                    <Avatar ava_num={1}/>
-                    {isBigScreen && <h1 style={{color: '#ff0000'}}></h1>}
-                    {isLaptopL && <h1 style={{color: '#00ff00'}}></h1>}
-                    {isLaptop && <h1 style={{color: '#0000ff'}}></h1>}
-                    {isMobile && <h1 style={{color: '#000000'}}></h1>}
-                </div>
+                {isBigScreen && 
+                    <div style={{color: "#000000", marginTop: 135}}>
+                        {content}
+                        <Avatar ava_num={1} ava_size={250}/>
+                    </div>
+                }
+
+                {isLaptopL && 
+                    <div style={{color: "#000000", marginTop: 135}}>
+                        {content}
+                        <Avatar ava_num={1} ava_size={200}/>
+                    </div>
+                }
+                    
+                {isLaptop && 
+                    <div style={{color: "#000000", marginTop: 135}}>
+                        {content}
+                        <Avatar ava_num={1} ava_size={150}/>
+                    </div>
+                }
+
+                {isMobile && 
+                    <div style={{color: "#000000", marginTop: 135}}>
+                        {content}
+                        <Avatar ava_num={1} ava_size={100}/>
+                    </div>
+                }
+                
             </div>
     );
 }

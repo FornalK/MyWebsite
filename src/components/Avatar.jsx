@@ -7,7 +7,7 @@ import Slide from '@mui/material/Slide';
 
 const start = true;
 
-function Avatar({ava_num}) {
+function Avatar({ava_num, ava_size}) {
     let ava = null;
     let ava_style = null;
     let slide_direction = null;
@@ -26,7 +26,7 @@ function Avatar({ava_num}) {
     return(
         <Container>
             <Slide direction={slide_direction} in={start} timeout={500} mountOnEnter unmountOnExit>
-                <img className={ava_style} src={ava} alt="Avatar"></img>
+                <img className={ava_style} style={{width: ava_size}} src={ava} alt="Avatar"></img>
             </Slide>
         </Container>  
     );

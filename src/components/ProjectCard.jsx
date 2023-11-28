@@ -5,13 +5,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-function ProjectCard({img, imgAlt, cardWidth, cardHeight}) {
+function ProjectCard({img, imgAlt, cardWidthP, cardHeightP}) {
   const [showDescription, setShowDescription] = useState(false);
     return (
         <Card 
           sx={{
-            width: 492,
-            maxHeight: 300,
+            width: cardWidthP,
+            maxHeight: cardHeightP,
             margin: '2px', 
             display: 'inline-block',
             '&:hover': {
@@ -24,8 +24,8 @@ function ProjectCard({img, imgAlt, cardWidth, cardHeight}) {
           <CardActionArea>
             <CardMedia
               component="img"
-              height={showDescription ? 190 : cardHeight} 
-              width={cardWidth}
+              height={showDescription ? 190 : cardHeightP} 
+              width={cardWidthP}
               image={img}
               alt={imgAlt}
             />

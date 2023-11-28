@@ -7,15 +7,15 @@ import photo4 from '../assets/photo4.jpg'
 import photo5 from '../assets/photo5.jpg'
 import photo6 from '../assets/photo6.jpg'
 
-function ProjectCardList() {
+function ProjectCardList({cardWidth, cardHeight}) {
     const images = [photo1, photo2, photo3, photo4, photo5, photo6];
     const cards = images.map((photo) => 
-        <ProjectCard key={photo} img={photo} cardHeight={300}/>
+        <ProjectCard key={photo} img={photo} cardHeightP={cardHeight} cardWidthP={cardWidth}/>
     );
 
     return (
-        <Container maxWidth="xl"  >
-            <div id="XD" style={{margin: 'auto'}}>
+        <Container style={{width: '50%'}}>
+            <div style={{margin: 'auto'}}>
                 {cards}
             </div>
         </Container>

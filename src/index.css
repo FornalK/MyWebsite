@@ -36,10 +36,8 @@ body {
 
 
 .texts_home{
-  width: 88%;
-  margin-top: 14%;
   margin-left: 10%;
-  min-height: 530px;
+  padding: 10px;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 30px;
   -webkit-box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);

@@ -23,29 +23,34 @@ function App() {
   let texts_box_height = 530;
   let texts_box_width = '50%';
   let texts_box_margin_top = '8%'
-  let ava_size = 250
+  let ava_size = 250;
+  let space_size = 50;
+
   if (isBigScreen) {
     texts_size = 56;
-    texts_box_height = 530;
+    texts_box_height = 490;
     texts_box_width = '60%';
   } else if (isLaptopL) {
     texts_size = 40;
-    texts_box_height = 360;
+    texts_box_height = 346;
     texts_box_width = '60%';
     texts_box_margin_top = '10%'
     ava_size = 220
+    space_size = 40
   } else if (isLaptop) {
     texts_size = 28;
-    texts_box_height = 272;
+    texts_box_height = 246;
     texts_box_width = '60%';
     texts_box_margin_top = '12%'
     ava_size = 190
+    space_size = 30
   } else if (isMobile) {
     texts_size = 14;
-    texts_box_height = 160;
+    texts_box_height = 120;
     texts_box_width = '60%';
     texts_box_margin_top = '30%'
     ava_size = 150
+    space_size = 20
   }
 
   return (
@@ -56,7 +61,7 @@ function App() {
           <div className="texts_home" style={{minHeight: texts_box_height, width: texts_box_width, marginTop: texts_box_margin_top}}>
             <AnimatedText text={t('Hi')} delay={400} styleNumber={0} speed={50} size={texts_size} />
             <AnimatedText text={t('Welcome')} delay={1400} styleNumber={0} speed={50} size={texts_size} />
-            <div style={{height: 50}}></div>
+            <div style={{height: space_size}}></div>
             <AnimatedText text={t('If')} delay={2250} styleNumber={1} speed={50} size={texts_size} />
             <AnimatedText text={t('and')} delay={3100} styleNumber={1} speed={50} size={texts_size} />
             <AnimatedText text={t('the')} delay={3850} styleNumber={1} speed={50} size={texts_size} />

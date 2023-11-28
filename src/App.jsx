@@ -46,7 +46,7 @@ function App() {
     space_size = 30
   } else if (isMobile) {
     texts_size = 14;
-    texts_box_height = 120;
+    texts_box_height = 128;
     texts_box_width = '60%';
     texts_box_margin_top = '30%'
     ava_size = 150

@@ -64,28 +64,28 @@ function ContactPage() {
     return (
             <div className={styles.bg}>
                 {isBigScreen && 
-                    <div style={{color: "#000000", marginTop: 135}}>
+                    <div style={{color: "#000000", marginTop: '8%'}}>
                         {content}
                         <Avatar ava_num={1} avaSize={250}/>
                     </div>
                 }
 
                 {isLaptopL && 
-                    <div style={{color: "#000000", marginTop: 135}}>
+                    <div style={{color: "#000000", marginTop: '12%'}}>
                         {content}
                         <Avatar ava_num={1} avaSize={180}/>
                     </div>
                 }
                     
                 {isLaptop && 
-                    <div style={{color: "#000000", marginTop: 135}}>
+                    <div style={{color: "#000000", marginTop: '16%'}}>
                         {content}
                         <Avatar ava_num={1} avaSize={130}/>
                     </div>
                 }
 
                 {isMobile && 
-                    <div style={{color: "#000000", marginTop: 135}}>
+                    <div style={{color: "#000000", marginTop: '20%'}}>
                         {content}
                         <Avatar ava_num={1} avaSize={80}/>
                     </div>

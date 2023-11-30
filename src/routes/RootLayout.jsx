@@ -6,6 +6,9 @@ import Loading from '../components/Loading';
 import LangContext from '../LocaleContext';
 import { useState } from 'react'; 
 import i18n from '../i18n';
+import { useMediaQuery } from "react-responsive";
+import MobileNavigation from "../components/MobileNavigation";
+import { useLocation } from 'react-router-dom';
 
 const theme = createTheme({
     palette: {
@@ -34,18 +37,28 @@ const theme = createTheme({
   });
 
 function RootLayout() {
-    const [locale, setLocale] = useState(i18n.language)
+    const isNotMobile = useMediaQuery({ query: '(min-width: 768px)' });
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+    const [locale, setLocale] = useState(i18n.language);
+    const location = useLocation();
     if (localStorage.getItem("lang") == 'pl') {
       i18n.changeLanguage('pl');
     } else {
       i18n.changeLanguage('en');
     }
 
+    function pagecode() {
+      if (location.pathname == '/') return 0;
+      else if (location.pathname == '/contact') return 1;
+      else if (location.pathname == '/about') return 2;
+    }
+
     return (
         <ThemeProvider theme={theme}>
           <LangContext.Provider value={{locale, setLocale}}> 
             <Suspense fallback={<Loading />}>
-              <NaviagtionButton />
+              {isNotMobile && <NaviagtionButton />}
+              {isMobile && <MobileNavigation code={pagecode} />}
               <Outlet />
             </Suspense>
           </LangContext.Provider>

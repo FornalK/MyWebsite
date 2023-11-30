@@ -66,28 +66,28 @@ function ContactPage() {
                 {isBigScreen && 
                     <div style={{color: "#000000", marginTop: '8%'}}>
                         {content}
-                        <Avatar ava_num={1} avaSize={250}/>
+                        <Avatar avaNum={1} avaSize={250} avaPosition={'0%'}/>
                     </div>
                 }
 
                 {isLaptopL && 
                     <div style={{color: "#000000", marginTop: '12%'}}>
                         {content}
-                        <Avatar ava_num={1} avaSize={180}/>
+                        <Avatar avaNum={1} avaSize={180} avaPosition={'0%'}/>
                     </div>
                 }
                     
                 {isLaptop && 
                     <div style={{color: "#000000", marginTop: '16%'}}>
                         {content}
-                        <Avatar ava_num={1} avaSize={130}/>
+                        <Avatar avaNum={1} avaSize={130} avaPosition={'0%'}/>
                     </div>
                 }
 
                 {isMobile && 
-                    <div style={{color: "#000000", marginTop: '20%'}}>
+                    <div style={{color: "#000000", marginTop: '12%'}}>
                         {content}
-                        <Avatar ava_num={1} avaSize={80}/>
+                        <Avatar avaNum={1} avaSize={80} avaPosition={'56px'}/>
                     </div>
                 }
                 

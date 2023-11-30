@@ -20,10 +20,10 @@ function AboutPage() {
         texts_box_margin_top = "10%"
     } else if (isLaptop) {
         texts_box_width = "84%"
-        texts_box_margin_top = "18%"
+        texts_box_margin_top = "14%"
     } else if (isMobile) {
         texts_box_width = "90%"
-        texts_box_margin_top = "28%"
+        texts_box_margin_top = "6%"
     }
 
     let prof_skills = (

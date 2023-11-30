@@ -14,6 +14,18 @@ function AboutPage() {
     const isLaptop = useMediaQuery({ query: '(min-width: 768px) and (max-width: 1023px)' });
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
+    let texts_box_width = "78%"
+    let texts_box_margin_top = "6%"
+    if (isLaptopL) {
+        texts_box_margin_top = "10%"
+    } else if (isLaptop) {
+        texts_box_width = "84%"
+        texts_box_margin_top = "18%"
+    } else if (isMobile) {
+        texts_box_width = "90%"
+        texts_box_margin_top = "28%"
+    }
+
     let prof_skills = (
         <Fragment>
             <div style={{lineHeight: 1.1}}>
@@ -44,7 +56,7 @@ function AboutPage() {
     return (
         <div className={styles.bg}>
             <Zoom in={start} style={{ transitionDelay: start ? '300ms' : '0ms' }}>
-                <div className={styles.texts}>
+                <div className={styles.texts} style={{width: texts_box_width, marginTop: texts_box_margin_top}}>
                     <Fade in={start} style={{ transitionDelay: start ? '600ms' : '0ms' }}>
                         <div>
                             {isBigScreen && <div className={styles.bigScreen}>
@@ -56,15 +68,24 @@ function AboutPage() {
                             </div>}
 
                             {isLaptopL && <div className={styles.laptopL}>
-                                {texts[0]}
+                                <h2>{t('aboutH1')}</h2>
+                                    {t('aboutC1')}
+
+                                    {prof_skills}
                             </div>}
 
                             {isLaptop && <div className={styles.laptop}>
-                                {texts[0]}
+                                <h2>{t('aboutH1')}</h2>
+                                    {t('aboutC1')}
+
+                                    {prof_skills}
                             </div>}
 
                             {isMobile && <div className={styles.mobile}>
-                                {texts[0]}
+                                <h2>{t('aboutH1')}</h2>
+                                    {t('aboutC1')}
+
+                                    {prof_skills}
                             </div>}
                         </div>
                     </Fade>

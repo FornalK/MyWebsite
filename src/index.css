@@ -31,7 +31,8 @@ body {
 
 .cards {
   width: 100%;
-  margin-top: 16%;
+  height: 100%;
+  position: relative;
 }
 
 

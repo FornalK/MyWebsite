@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { Container } from '@mui/material';
-import avatar1 from '../assets/av2.png'
+import avatar1 from '../assets/av22.png'
 import avatar2 from '../assets/av3.png'
 import styles from './Avatar.module.css'
 import Slide from '@mui/material/Slide';

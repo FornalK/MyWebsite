@@ -25,6 +25,9 @@ function App() {
   let texts_box_margin_top = '8%'
   let ava_size = 250;
   let space_size = 50;
+  let project_columns = 3;
+  let img_width = 460;
+  let img_height = 300;
 
   if (isBigScreen) {
     texts_size = 56;
@@ -37,6 +40,8 @@ function App() {
     texts_box_margin_top = '10%'
     ava_size = 220
     space_size = 40
+    img_width = 320;
+    img_height = 208;
   } else if (isLaptop) {
     texts_size = 28;
     texts_box_height = 246;
@@ -44,6 +49,9 @@ function App() {
     texts_box_margin_top = '12%'
     ava_size = 190
     space_size = 30
+    img_width = 320;
+    img_height = 208;
+    project_columns = 2;
   } else if (isMobile) {
     texts_size = 14;
     texts_box_height = 128;
@@ -51,6 +59,9 @@ function App() {
     texts_box_margin_top = '30%'
     ava_size = 150
     space_size = 20
+    img_width = 240;
+    img_height = 156;
+    project_columns = 1;
   }
 
   return (
@@ -72,8 +83,8 @@ function App() {
 
       <div className="bottom-of-page" style={{height: 920, marginTop: 20}}>
         <ScrollButton direction="up"/>
-        <div className="cards" style={{marginTop: 190}}>
-          <h2>Tutaj będą karty projektów</h2>
+        <div className="cards">
+          <ProjectCardList columns={project_columns} imgWidth={img_width} imgHeight={img_height}/>
         </div>
       </div>
     </Box>

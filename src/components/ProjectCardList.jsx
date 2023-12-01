@@ -21,7 +21,7 @@ const itemData = [
     { img: photo6, title: "cos", subtitle: "cos2"}
 ];
 
-export default function ProjectCardList({columns, imgWidth, imgHeight}) {
+export default function ProjectCardList({columns, imgWidth, imgHeight, listMaxHeight}) {
   return (
     <div style={{
         margin: 0,
@@ -29,9 +29,8 @@ export default function ProjectCardList({columns, imgWidth, imgHeight}) {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        maxHeight: '700px'
     }}>
-        <ImageList sx={{ width: 'auto', height: 'auto' }} cols={columns} gap={8}>
+        <ImageList sx={{ width: 'auto', maxHeight: listMaxHeight }} cols={columns} gap={8}>
         {itemData.map((item) => (
             <ImageListItem key={item.img}>
             <img

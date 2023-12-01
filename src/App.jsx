@@ -18,6 +18,7 @@ function App() {
   const isLaptopL = useMediaQuery({ query: '(min-width: 1024px) and (max-width: 1439px)' });
   const isLaptop = useMediaQuery({ query: '(min-width: 768px) and (max-width: 1023px)' });
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const isMobileShort = useMediaQuery({ query: '(max-width: 767px) and (max-height: 780px)' });
 
   let texts_size = 62;
   let texts_box_height = 530;
@@ -28,6 +29,7 @@ function App() {
   let project_columns = 3;
   let img_width = 460;
   let img_height = 300;
+  let list_max_height = 920;
 
   if (isBigScreen) {
     texts_size = 56;
@@ -59,9 +61,14 @@ function App() {
     texts_box_margin_top = '30%'
     ava_size = 150
     space_size = 20
-    img_width = 240;
-    img_height = 156;
+    img_width = 306;
+    img_height = 200;
     project_columns = 1;
+    list_max_height = 620;
+  }
+
+  if (isMobileShort) {
+    list_max_height = 400;
   }
 
   return (
@@ -84,7 +91,7 @@ function App() {
       <div className="bottom-of-page" style={{height: 920, marginTop: 20}}>
         <ScrollButton direction="up"/>
         <div className="cards">
-          <ProjectCardList columns={project_columns} imgWidth={img_width} imgHeight={img_height}/>
+          <ProjectCardList columns={project_columns} imgWidth={img_width} imgHeight={img_height} listMaxHeight={list_max_height}/>
         </div>
       </div>
     </Box>

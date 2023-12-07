@@ -4,12 +4,14 @@ import { Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
 import Zoom from '@mui/material/Zoom';
 import Fade from '@mui/material/Fade';
+import programming_img from '../assets/programming-languages-1.png'
 
 const start = true;
 
 function AboutPage() {
     const { t } = useTranslation();
-    const isBigScreen = useMediaQuery({ query: '(min-width: 1440px)' });
+    const isBigScreenShort = useMediaQuery({ query: '(min-width: 1440px) and (max-height: 780px)' });
+    const isBigScreen = useMediaQuery({ query: '(min-width: 1440px) and (min-height: 781px)' });
     const isLaptopL = useMediaQuery({ query: '(min-width: 1024px) and (max-width: 1439px)' });
     const isLaptop = useMediaQuery({ query: '(min-width: 768px) and (max-width: 1023px)' });
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
@@ -64,7 +66,15 @@ function AboutPage() {
                                 {t('aboutC1')}
 
                                 {prof_skills}
-                
+                                <img className={styles.programmingImg} src={programming_img} alt="Programming"/>
+                            </div>}
+
+                            {isBigScreenShort && <div className={styles.bigScreenShort}>
+                                <h2>{t('aboutH1')}</h2>
+                                {t('aboutC1')}
+
+                                {prof_skills}
+                                <img className={styles.programmingImg} src={programming_img} alt="Programming"/>
                             </div>}
 
                             {isLaptopL && <div className={styles.laptopL}>

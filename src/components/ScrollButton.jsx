@@ -15,7 +15,7 @@ function ScrollButton({direction}) {
 
         if (direction == "down") {
             window.scrollTo({
-            top: 1000,
+            top: 10000,
             behavior: 'smooth'
             });
         }

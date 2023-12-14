@@ -1,4 +1,3 @@
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useMediaQuery } from "react-responsive";
 import { Box } from '@mui/material';
 import AnimatedText from './components/AnimatedText';
@@ -14,8 +13,6 @@ const start = true;
 function App() {
   const { t } = useTranslation();
   const windowSize = useWindowDimensions();
-
-  console.log(windowSize[0], windowSize[1]);
 
   const isLargeScreen = useMediaQuery({ query: '(min-width: 1760px)' });
   const isBigScreenShort = useMediaQuery({ query: '(min-width: 1440px) and (max-width: 1759px) and (max-height: 780px)' });

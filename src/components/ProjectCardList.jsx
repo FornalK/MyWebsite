@@ -24,11 +24,11 @@ const itemData = [
     { img: photo6, title: "Project6", subtitle: "Short description", pr_num: 5}
 ];
 
+
 export default function ProjectCardList({columns, imgWidth, imgHeight, listMaxHeight}) {
 
   const [open, setOpen] = useState(false);
-  const [prNum, setPrNum] = useState(null);
-  let project_num = null;
+  const [prNum, setPrNum] = useState(0);
   const handleClose = () => {
     setOpen(false);
     setOpen(null);

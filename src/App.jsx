@@ -7,13 +7,18 @@ import ProjectCardList from './components/ProjectCardList';
 import Avatar from './components/Avatar';
 import { useTranslation } from 'react-i18next'
 import Zoom from '@mui/material/Zoom';
+import useWindowDimensions from './WindowDimensions';
 
 const start = true;
 
 function App() {
   const { t } = useTranslation();
+  const windowSize = useWindowDimensions();
+
+  console.log(windowSize[0], windowSize[1]);
 
   const isLargeScreen = useMediaQuery({ query: '(min-width: 1760px)' });
+  const isBigScreenShort = useMediaQuery({ query: '(min-width: 1440px) and (max-width: 1759px) and (max-height: 780px)' });
   const isBigScreen = useMediaQuery({ query: '(min-width: 1440px) and (max-width: 1759px)' });
   const isLaptopL = useMediaQuery({ query: '(min-width: 1024px) and (max-width: 1439px)' });
   const isLaptop = useMediaQuery({ query: '(min-width: 768px) and (max-width: 1023px)' });
@@ -30,8 +35,11 @@ function App() {
   let img_width = 460;
   let img_height = 300;
   let list_max_height = 920;
-
-  if (isBigScreen) {
+  if (isBigScreenShort) {
+    texts_size = 50;
+    texts_box_height = 430;
+    texts_box_width = '50%';
+  } else if (isBigScreen) {
     texts_size = 56;
     texts_box_height = 490;
     texts_box_width = '60%';
@@ -74,7 +82,7 @@ function App() {
   return (
     <Box>
       <ScrollButton direction="down"/>
-      <div className="top-of-page" style={{height: 920}}>
+      <div className="top-of-page" style={{height: windowSize[1]}}>
         <Zoom in={start} style={{ transitionDelay: start ? '300ms' : '0ms' }}>
           <div className="texts_home" style={{minHeight: texts_box_height, width: texts_box_width, marginTop: texts_box_margin_top}}>
             <AnimatedText text={t('Hi')} delay={400} styleNumber={0} speed={50} size={texts_size} />
@@ -88,8 +96,8 @@ function App() {
         <Avatar avaNum={0} avaSize={ava_size}/>
       </div>
 
-      <div className="bottom-of-page" style={{height: 920, marginTop: 20}}>
-        <ScrollButton direction="up"/>
+      <div className="bottom-of-page" style={{height: windowSize[1], marginTop: 20}}>
+        <ScrollButton direction="up" />
         <div className="cards">
           <ProjectCardList columns={project_columns} imgWidth={img_width} imgHeight={img_height} listMaxHeight={list_max_height}/>
         </div>

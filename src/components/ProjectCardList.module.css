@@ -1,0 +1,15 @@
+.projectImg {
+    background-color: #f4511e;
+    border-radius: 10px;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.projectDesc {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+  
+.projectImg:hover {
+opacity: 1
+}

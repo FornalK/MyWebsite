@@ -21,5 +21,20 @@
     "About": "O mnie",
     "Change": "Zmień na Angielski",
     "Home2": "Główna",
-    "Change2": "EN"
+    "Change2": "EN",
+    "Proj1Title": "Program do analizy dynamiki przekazu wideo",
+    "Proj1Subtitle": "Projekt studencki w ramach badań naukowych wykorzystujących eye-tracking",
+    "Proj1Desc": "Treści wideo online mają znaczący udział w korzystaniu z internetu i odgrywają ważną rolę w strategiach marketingowych. Mój program pomógł w badaniu w jaki sposób dynamika wideo reprezentowana przez dedykowane metryki jest powiązana z wzorcami śledzenia wzroku i czy dynamika wideo może być predykatorem zaangażowania użytkownika reprezentowanego przez ilość fiksacji i długość skupienia wzroku na treściach wideo",
+    "Proj1Program": "Link do programu",
+    "Proj1Articles": "Artykuły naukowe, w których wykorzystano program:",
+    "Proj2Title": "Fiszki",
+    "Proj2Subtitle": "Aplikacja internetowa do nauki języków poprzez fiszki",
+    "Proj2Desc": "Aplikacja przeglądarkowa umożliwiająca naukę w oparciu o prosty mechanizm “pytanie - odpowiedź” za pomocą cyfrowych fiszek (kartek), na których z jednej strony znajdują się pytania, a z drugiej - prawidłowe odpowiedzi lub definicje",
+    "Proj2Desc2": "Był to projekt zespołowy, odpowiadałem w nim za frontend strony",
+    "Proj2Program": "Kod aplikacji",
+    "Proj3Title": "Koncerny samochodowe",
+    "Proj3Subtitle": "Wizualizacja danych dotyczących największych koncernów i producentów samochodów",
+    "Proj3Desc": "Celem projektu było stworzenie wizualizacji przy użyciu oprogramowania do wizualizacji jakim jest PowerBI na temat największych koncernów i producent samochodów z całego świata. Dane te miały dotyczyć informacji mówiących o tym jak owi producenci radzą sobie na giełdzie, jaką pozycję względem konkurencji zajmują, jaki jest ich kapitał, ceny akcji etc.",
+    "Proj3Desc2": "Był to projekt zespołowy, odpowiadałem w nim za web scraping, gromadzenie i przetwarzanie danych, łączność i zarządzanie bazą danych",
+    "Proj3Program": "Link do projektu"
 }

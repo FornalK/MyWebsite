@@ -21,5 +21,20 @@
     "About": "About",
     "Change": "Change to Polish",
     "Home2": "Home",
-    "Change2": "PL"
+    "Change2": "PL",
+    "Proj1Title": "Program for analyzing the dynamics of video content",
+    "Proj1Subtitle": "Student project as part of scientific research using eye-tracking",
+    "Proj1Desc": "Online video content has a significant share of internet usage with important role in marketing strategies. My program helped in examining how video dynamics represented by dedicated metrics is related to eye tracking patterns and whether video dynamics can be a predictor of user engagement represented by the number of fixations and the length of eye focus on video content",
+    "Proj1Program": "Link to the app",
+    "Proj1Articles": "Scientific articles in which the program was used:",
+    "Proj2Title": "Flashcards",
+    "Proj2Subtitle": "Web application for learning languages through flashcards",
+    "Proj2Desc": "A browser application that gives you the opportunity to learn based on a simple “question-answer” mechanism using digital cards with questions on one side and correct answers or definitions on the other",
+    "Proj2Desc2": "It was a team project, I was responsible for the website frontend",
+    "Proj2Program": "App code",
+    "Proj3Title": "Car companies",
+    "Proj3Subtitle": "Data visualization of the largest car manufacturers",
+    "Proj3Desc": "The aim of the project was to create visualizations using PowerBI software about the largest car manufacturers from around the world. This data was supposed to include information about how these producers are doing on the stock exchange, what position they hold relative to the competition, what their capital is, share prices, etc.",
+    "Proj3Desc2": "It was a team project, I was responsible for web scraping, data collection and processing, connectivity and database management",
+    "Proj3Program": "Link to the project"
 }

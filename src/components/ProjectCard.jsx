@@ -4,8 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useMediaQuery } from "react-responsive";
+import { useTranslation } from 'react-i18next'
 
-export default function ProjectCard({img, imgAlt, cardWidthP, cardHeightP}) {
+export default function ProjectCard({img, imgAlt, prNum, cardWidthP, cardHeightP}) {
+  const { t } = useTranslation();
 
   const isLargeScreen = useMediaQuery({ query: '(min-width: 1760px)' });
   const isBigScreenShort = useMediaQuery({ query: '(min-width: 1440px) and (max-width: 1759px) and (max-height: 780px)' });
@@ -38,15 +40,44 @@ export default function ProjectCard({img, imgAlt, cardWidthP, cardHeightP}) {
         height="400"
         image={img}
         alt={imgAlt}
-        sx={{height: '67%'}}
+        sx={{height: '65%'}}
       />
-      <CardContent sx={{height: '33%', backgroundColor: 'primary.main'}}>
+      <CardContent sx={{height: '35%', backgroundColor: 'primary.main'}}>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          {t(imgAlt)}
         </Typography>
         <Typography variant="body2" color="text.secondary" >
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {prNum == 0 && <div>
+            {t("Proj1Desc")} 
+            <div style={{margin: '8px 0px'}}>
+            <a style={{textDecoration: 'none'}} href="https://github.com/FornalK/Kacper/blob/master/videoDynamicsV9/main.py">{t("Proj1Program")}</a>
+            </div>
+            {t("Proj1Articles")} 
+            <span> </span>
+            <a style={{textDecoration: 'none'}} href="https://www.sciencedirect.com/science/article/pii/S1877050923016319">link1</a> 
+            <span> </span>
+            <a style={{textDecoration: 'none'}} href="https://ieeexplore.ieee.org/abstract/document/10305923">link2</a>
+          </div>}
+
+          {prNum == 1 && <div>
+            {t("Proj2Desc")} 
+            <div style={{margin: '8px 0px'}}>
+            {t("Proj2Desc2")} 
+            </div>
+            <div style={{margin: '8px 0px'}}>
+            <a style={{textDecoration: 'none'}} href="https://github.com/mglinska/fiszki">{t("Proj2Program")}</a>
+            </div>
+          </div>}
+
+          {prNum == 2 && <div>
+            {t("Proj3Desc")} 
+            <div style={{margin: '8px 0px'}}>
+            {t("Proj3Desc2")} 
+            </div>
+            <div style={{margin: '8px 0px'}}>
+            <a style={{textDecoration: 'none'}} href="https://github.com/zm46704/IPZ-2021-22">{t("Proj3Program")}</a>
+            </div>
+          </div>}
         </Typography>
       </CardContent>
     </Card>

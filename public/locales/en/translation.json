@@ -36,5 +36,6 @@
     "Proj3Subtitle": "Data visualization of the largest car manufacturers",
     "Proj3Desc": "The aim of the project was to create visualizations using PowerBI software about the largest car manufacturers from around the world. This data was supposed to include information about how these producers are doing on the stock exchange, what position they hold relative to the competition, what their capital is, share prices, etc.",
     "Proj3Desc2": "It was a team project, I was responsible for web scraping, data collection and processing, connectivity and database management",
-    "Proj3Program": "Link to the project"
+    "Proj3Program": "Link to the project",
+    "ProjEmptyTitle": "Not developed yet :)"
 }

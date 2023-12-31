@@ -34,15 +34,14 @@ export default function ProjectCard({img, imgAlt, prNum, cardWidthP, cardHeightP
   }
 
   return (
-    <Card sx={{ width: '60%', height: '60%', boxShadow: '0px 0px 80px 14px rgba(65, 74, 114, 1)', backgroundColor: 'rgba(0, 0, 0, 0)' }}>
+    <Card sx={{ width: '72%', height: '91%', boxShadow: '0px 0px 80px 14px rgba(65, 74, 114, 1)', backgroundColor: 'rgba(0, 0, 0, 0)' }}>
       <CardMedia
         component="img"
-        height="400"
         image={img}
         alt={imgAlt}
-        sx={{height: '65%'}}
+        sx={{ maxWidth: '100%', maxHeight: '80%'}}
       />
-      <CardContent sx={{height: '35%', backgroundColor: 'primary.main'}}>
+      <CardContent sx={{height: '20%', backgroundColor: 'primary.main'}}>
         <Typography gutterBottom variant="h5" component="div">
           {t(imgAlt)}
         </Typography>

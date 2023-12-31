@@ -1,5 +1,4 @@
 .projectImg {
-    background-color: #f4511e;
     border-radius: 10px;
     opacity: 0.5;
     transition: 0.3s;
@@ -12,4 +11,9 @@
   
 .projectImg:hover {
 opacity: 1
+}
+
+.projectImgEmpty {
+    border-radius: 10px;
+    opacity: 0.5;
 }

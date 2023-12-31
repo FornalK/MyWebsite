@@ -36,5 +36,6 @@
     "Proj3Subtitle": "Wizualizacja danych dotyczących największych koncernów i producentów samochodów",
     "Proj3Desc": "Celem projektu było stworzenie wizualizacji przy użyciu oprogramowania do wizualizacji jakim jest PowerBI na temat największych koncernów i producent samochodów z całego świata. Dane te miały dotyczyć informacji mówiących o tym jak owi producenci radzą sobie na giełdzie, jaką pozycję względem konkurencji zajmują, jaki jest ich kapitał, ceny akcji etc.",
     "Proj3Desc2": "Był to projekt zespołowy, odpowiadałem w nim za web scraping, gromadzenie i przetwarzanie danych, łączność i zarządzanie bazą danych",
-    "Proj3Program": "Link do projektu"
+    "Proj3Program": "Link do projektu",
+    "ProjEmptyTitle": "Jeszcze nie zagospodarowane :)"
 }

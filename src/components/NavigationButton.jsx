@@ -39,7 +39,17 @@ export default function NaviagtionButton() {
       i18n.changeLanguage('en')
       localStorage.setItem("lang", "en");
     }
-    if (location.pathname == '/' || location.pathname == '/contact') window.location.reload(false);
+    if (location.pathname == '/') {
+      route('/_');
+      setTimeout(() => {
+        route('/');
+      }, 100);
+    } else if (location.pathname == '/contact') {
+      route('/contact_');
+      setTimeout(() => {
+        route('/contact');
+      }, 100);
+    }
   }
 
   function route(path) {

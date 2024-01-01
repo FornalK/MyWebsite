@@ -5,13 +5,17 @@ import App from './App.jsx'
 import RootLayout from './routes/RootLayout.jsx'
 import AboutPage from './routes/AboutPage.jsx'
 import ContactPage from './routes/ContactPage.jsx'
+import ContactPageBlank from './routes/ContactPageBlank.jsx'
+import HomePageBlank from './routes/HomePageBlank.jsx'
 import './index.css'
 
 const router = createBrowserRouter([
-  {path: '/', element: <RootLayout />, children: [
-    {path: '/', element: <App />},
-    {path: '/contact', element: <ContactPage />},
-    {path: '/about', element: <AboutPage />}
+    {path: '/', element: <RootLayout />, children: [
+      {path: '/', element: <App />},
+      {path: '/_', element: <HomePageBlank />},
+      {path: '/contact', element: <ContactPage />},
+      {path: '/contact_', element: <ContactPageBlank />},
+      {path: '/about', element: <AboutPage />}
   ]}
 ]);
 

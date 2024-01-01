@@ -111,7 +111,7 @@ export default function ProjectCardList({columns, imgWidth, imgHeight, listMaxHe
         open={open}
         onClick={handleClose}
         >
-            <ProjectCard img={itemData[prNum].img2} imgAlt={itemData[prNum].title} prNum={prNum} cardWidthP={500} cardHeightP={500}/>
+            <ProjectCard img={itemData[prNum].img2} imgAlt={itemData[prNum].title} prNum={prNum}/>
         </Backdrop>
     </>
   );

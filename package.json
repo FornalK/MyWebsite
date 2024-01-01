@@ -16,6 +16,7 @@
     "@fontsource/roboto": "^5.0.3",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.6",
+    "auto-text-size": "^0.2.2",
     "bootstrap": "^5.1.0",
     "email-js": "^2.0.2",
     "i18next": "^23.6.0",

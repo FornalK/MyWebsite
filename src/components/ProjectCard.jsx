@@ -6,42 +6,38 @@ import Typography from '@mui/material/Typography';
 import { useMediaQuery } from "react-responsive";
 import { useTranslation } from 'react-i18next'
 
-export default function ProjectCard({img, imgAlt, prNum, cardWidthP, cardHeightP}) {
+export default function ProjectCard({img, imgAlt, prNum}) {
   const { t } = useTranslation();
 
-  const isLargeScreen = useMediaQuery({ query: '(min-width: 1760px)' });
-  const isBigScreenShort = useMediaQuery({ query: '(min-width: 1440px) and (max-width: 1759px) and (max-height: 780px)' });
-  const isBigScreen = useMediaQuery({ query: '(min-width: 1440px) and (max-width: 1759px)' });
-  const isLaptopL = useMediaQuery({ query: '(min-width: 1024px) and (max-width: 1439px)' });
-  const isLaptop = useMediaQuery({ query: '(min-width: 768px) and (max-width: 1023px)' });
+  const isLaptopOrLower = useMediaQuery({ query: '(max-width: 1023px)' });
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
-  const isMobileShort = useMediaQuery({ query: '(max-width: 767px) and (max-height: 780px)' });
+  const isShort = useMediaQuery({ query: '(max-height: 920px)' });
 
-  if (isBigScreenShort) {
-    
-  } else if (isBigScreen) {
-    
-  } else if (isLaptopL) {
-    
-  } else if (isLaptop) {
-    
-  } else if (isMobile) {
-   
+
+  let cardMediaHeight = 'auto'
+  let cardContentHeight = 'auto'
+  let cardWidth = '60%'
+
+
+  if (isLaptopOrLower) {
+    cardWidth = '90%'
+  } else if (isShort) {
+    cardWidth = '50%'
   }
 
-  if (isMobileShort) {
-    
+  if (isMobile) {
+    cardWidth = '90%'
   }
 
   return (
-    <Card sx={{ width: '72%', height: '91%', boxShadow: '0px 0px 80px 14px rgba(65, 74, 114, 1)', backgroundColor: 'rgba(0, 0, 0, 0)' }}>
+    <Card sx={{ width: cardWidth, maxHeight: '91%', boxShadow: '0px 0px 80px 14px rgba(65, 74, 114, 1)', backgroundColor: 'rgba(0, 0, 0, 0)' }}>
       <CardMedia
         component="img"
         image={img}
         alt={imgAlt}
-        sx={{ maxWidth: '100%', maxHeight: '80%'}}
+        sx={{ maxWidth: '100%', height: '50%'}}
       />
-      <CardContent sx={{height: '20%', backgroundColor: 'primary.main'}}>
+      <CardContent sx={{height: '50%', backgroundColor: 'primary.main'}}>
         <Typography gutterBottom variant="h5" component="div">
           {t(imgAlt)}
         </Typography>

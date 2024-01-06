@@ -64,7 +64,7 @@ function App() {
     texts_box_height = 128;
     texts_box_width = '60%';
     texts_box_margin_top = '30%'
-    ava_size = 150
+    ava_size = 142
     space_size = 20
     img_width = 306;
     img_height = 200;
@@ -74,6 +74,7 @@ function App() {
 
   if (isMobileShort) {
     list_max_height = 400;
+    ava_size = 112
   }
 
   return (

@@ -34,11 +34,11 @@
 
 .programmingImg {
     display: block;
-    width: 44%;
+    width: 48%;
     height: auto;  
     position: absolute;
-    right: 10%;
+    right: 8%;
     bottom: 0px;
     border-radius: 10px;
-    opacity: 0.6;
+    opacity: 0.9;
 }

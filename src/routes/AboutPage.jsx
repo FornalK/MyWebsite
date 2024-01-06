@@ -4,7 +4,7 @@ import { Fragment } from 'react'
 import { useTranslation } from 'react-i18next'
 import Zoom from '@mui/material/Zoom';
 import Fade from '@mui/material/Fade';
-import programming_img from '../assets/programming-languages-1.png'
+import programming_img from '../assets/grafika-about.png'
 
 const start = true;
 

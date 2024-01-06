@@ -23,50 +23,57 @@ function ContactPage() {
     const isLaptopL = useMediaQuery({ query: '(min-width: 1024px) and (max-width: 1439px)' });
     const isLaptop = useMediaQuery({ query: '(min-width: 768px) and (max-width: 1023px)' });
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
-    const isShort = useMediaQuery({ query: '(max-height: 780px)' });
+    const isShort = useMediaQuery({ query: '(max-height: 820px)' });
 
     let black_texts_size = 42;
     let orange_texts_size = 26;
     let texts_box_height = 267;
     let texts_box_width = '60%';
     let form_width = '35%';
-    let ava_size = 250
-    let ava_position = '0%'
-    let margin_top = '8%'
+    let ava_size = 500;
+    let ava_bottom = '0%';
+    let ava_right = "12%";
+    let margin_top = '8%';
     
     if (isBigScreenShort) {
         black_texts_size = 28;
         orange_texts_size = 18;
         texts_box_height = 182;
-        form_width = '35%'
-        ava_size = 130
-        margin_top = '6%'
-        texts_box_width = '45%'
+        form_width = '35%';
+        ava_size = 380;
+        margin_top = '6%';
+        texts_box_width = '45%';
     } else if (isLaptopL) {
         black_texts_size = 40;
         orange_texts_size = 24;
-        ava_size = 180
-        margin_top = '12%'
+        ava_size = 380;
+        margin_top = '12%';
     } else if (isLaptop) {
         black_texts_size = 28;
         orange_texts_size = 18;
         texts_box_height = 182;
-        form_width = '45%'
-        ava_size = 130
-        margin_top = '16%'
+        form_width = '45%';
+        ava_size = 300;
+        margin_top = '16%';
+        ava_right = '6%';
     } else if (isMobile) {
         black_texts_size = 17;
         orange_texts_size = 13;
         texts_box_height = 120;
         texts_box_width = '80%';
-        form_width = '70%'
-        ava_size = 80
-        margin_top = '12%'
-        ava_position = '56px'
+        form_width = '70%';
+        ava_size = 240;
+        margin_top = '12%';
+        ava_bottom = '56px';
+        ava_right = '6%';
     }
 
     if (isShort && !isMobile) {
         margin_top = '6%'
+    }
+
+    if (isShort && isMobile) {
+        ava_right = '-12%';
     }
 
     let content = (
@@ -89,7 +96,7 @@ function ContactPage() {
         <div className={styles.bg}>
             <div style={{color: "#000000", marginTop: margin_top}}>
                 {content}
-                <Avatar avaNum={1} avaSize={ava_size} avaPosition={ava_position}/>
+                <Avatar avaNum={1} avaSize={ava_size} avaBottom={ava_bottom} avaRight={ava_right}/>
             </div>
         </div>
     );

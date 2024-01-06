@@ -80,7 +80,7 @@ export default function ProjectCardList({columns, imgWidth, imgHeight, listMaxHe
                     subtitle={t(item.subtitle)}
                 />
                 </ImageListItem> ): (
-                <ImageListItem key={item.img}>
+                <ImageListItem key={item.pr_num}>
                 <img
                     className={styles.projectImgEmpty}
                     style={{

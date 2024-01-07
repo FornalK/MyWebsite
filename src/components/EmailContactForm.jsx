@@ -8,12 +8,16 @@ import emailjs from '@emailjs/browser';
 import Slide from '@mui/material/Slide';
 import { useTranslation } from 'react-i18next'
 import styles from './EmailContactForm.module.css'
+import { useMediaQuery } from "react-responsive";
 
-
-const EmailContactForm = ({delay, formWidth}) => {
+const EmailContactForm = ({delay, formWidth, setter}) => {
  const { t } = useTranslation();
  const form = useRef();
  const [showForm, setShowForm] = useState(false);
+ const [focus, setFocus] = useState(0);
+
+ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+
  useEffect(() => {
     const timeout = setTimeout(() => {
         setShowForm(true)
@@ -33,51 +37,60 @@ const EmailContactForm = ({delay, formWidth}) => {
      });
  };
 
- 
+ function changeFocus(num) {
+    setFocus(num);
+    setter(num);
+ }
+
 
  return (
     <Container>
         <Slide direction='up' in={showForm} mountOnEnter unmountOnExit>
             <form ref={form} onSubmit={sendEmail}>
-                    <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        width: formWidth,
-                        margin: 'auto',
-                        '& .MuiTextField-root': { m: 1 },
-                    }}
-                    >
-                        <TextField
-                            type="email"
-                            name="email"
-                            label={t('formLabel1')}
-                            color="primary"
-                            focused 
-                            />
-                        <TextField 
-                            type="text" 
-                            name="subject"
-                            label={t('formLabel2')}
-                            color="primary"
-                            focused  />
-                        <TextField 
-                            type="text" 
-                            name="message"
-                            label={t('formLabel3')}
+                <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: formWidth,
+                    margin: 'auto',
+                    '& .MuiTextField-root': { m: 1 },
+                }}
+                >
+                    {(((focus == 0) || (focus == 1 && isMobile)) || (!isMobile)) && <TextField
+                        type="email"
+                        name="email"
+                        label={t('formLabel1')}
+                        color="primary"
+                        focused 
+                        onFocus={() => changeFocus(1)} 
+                        onBlur={() => changeFocus(0)} /> }
+                    {(((focus == 0) || (focus == 2 && isMobile)) || (!isMobile)) && <TextField 
+                        type="text" 
+                        name="subject"
+                        label={t('formLabel2')}
+                        color="primary"
+                        focused
+                        onFocus={() => changeFocus(2)}
+                        onBlur={() => changeFocus(0)} /> }
+                    {(((focus == 0) || (focus == 3 && isMobile)) || (!isMobile)) && <TextField 
+                        type="text" 
+                        name="message"
+                        label={t('formLabel3')}
 
-                            color="primary"
-                            multiline
-                            rows={5}
-                            focused  />
-                        <Button type="submit" variant="contained" endIcon={<SendIcon />}
-                        sx={{
-                            width: '200px', 
-                            margin: 'auto'
-                        }}>
-                            <span className={styles.font_style}>{t('formSubmit')}</span>
-                        </Button>
-                    </Box>
+                        color="primary"
+                        multiline
+                        rows={5}
+                        focused
+                        onFocus={() => changeFocus(3)}
+                        onBlur={() => changeFocus(0)} /> }
+                    {(((focus == 0) || (focus == 0 && isMobile)) || (!isMobile)) && <Button type="submit" variant="contained" endIcon={<SendIcon />}
+                    sx={{
+                        width: '200px', 
+                        margin: 'auto'
+                    }}>
+                        <span className={styles.font_style}>{t('formSubmit')}</span>
+                    </Button> }
+                </Box>
             </form>
         </Slide>
    </Container>

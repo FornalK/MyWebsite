@@ -7,6 +7,7 @@ import styles from './ContactPage.module.css';
 import { useTranslation } from 'react-i18next'
 import Zoom from '@mui/material/Zoom';
 import Avatar from "../components/Avatar";
+import { useState } from "react";
 
 const texts = [
     "email: kacper_fornalczyk@wp.pl",
@@ -24,6 +25,8 @@ function ContactPage() {
     const isLaptop = useMediaQuery({ query: '(min-width: 768px) and (max-width: 1023px)' });
     const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
     const isShort = useMediaQuery({ query: '(max-height: 820px)' });
+
+    const [isFocused, setIsFocused] = useState(false);
 
     let black_texts_size = 42;
     let orange_texts_size = 26;
@@ -76,6 +79,11 @@ function ContactPage() {
         ava_right = '-12%';
     }
 
+    const isFocusedOnTextField = (data) => {
+        if (data == 0) setIsFocused(false);
+        else setIsFocused(true);
+    }
+
     let content = (
         <Fragment>
             <Container className={styles.info}>
@@ -88,7 +96,7 @@ function ContactPage() {
                     </div>
                 </Zoom>
             </Container>
-            <EmailContactForm delay={6800} formWidth={form_width}/>
+            <EmailContactForm delay={6800} formWidth={form_width} setter={isFocusedOnTextField}/>
         </Fragment>
     );
     
@@ -96,7 +104,7 @@ function ContactPage() {
         <div className={styles.bg}>
             <div style={{color: "#000000", marginTop: margin_top}}>
                 {content}
-                <Avatar avaNum={1} avaSize={ava_size} avaBottom={ava_bottom} avaRight={ava_right}/>
+                <Avatar avaNum={1} avaSize={ava_size} avaBottom={!isFocused && isMobile ? ava_bottom : '-50px'} avaRight={ava_right}/>
             </div>
         </div>
     );

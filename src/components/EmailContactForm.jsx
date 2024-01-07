@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, forwardRef } from "react";
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
@@ -9,6 +9,12 @@ import Slide from '@mui/material/Slide';
 import { useTranslation } from 'react-i18next'
 import styles from './EmailContactForm.module.css'
 import { useMediaQuery } from "react-responsive";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const EmailContactForm = ({delay, formWidth, setter}) => {
  const { t } = useTranslation();
@@ -18,14 +24,34 @@ const EmailContactForm = ({delay, formWidth, setter}) => {
  const [email, setEmail] = useState('');
  const [title, setTitle] = useState('');
  const [message, setMessage] = useState('');
+ const [open, setOpen] = useState(false);
+
+ const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
  const handleChange = (event, fieldNum) => {
     if (fieldNum === 1) setEmail(event.target.value);
     else if (fieldNum === 2) setTitle(event.target.value);
     else if (fieldNum === 3) setMessage(event.target.value);
-  };
+ };
 
- const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+ const handleSend = () => {
+    setTimeout(() => {
+        setOpen(true);
+        setEmail('');
+        setTitle('');
+        setMessage('');
+    }, 200)
+ };
+
+ const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+};
+
+
 
  useEffect(() => {
     const timeout = setTimeout(() => {
@@ -96,16 +122,25 @@ const EmailContactForm = ({delay, formWidth, setter}) => {
                         onChange={event => handleChange(event, 3)}
                         onFocus={() => changeFocus(3)}
                         onBlur={() => changeFocus(0)} /> }
-                    {(((focus == 0) || (focus == 0 && isMobile)) || (!isMobile)) && <Button type="submit" variant="contained" endIcon={<SendIcon />}
-                    sx={{
-                        width: '200px', 
-                        margin: 'auto'
-                    }}>
-                        <span className={styles.font_style}>{t('formSubmit')}</span>
+                    {(((focus == 0) || (focus == 0 && isMobile)) || (!isMobile)) && <Button 
+                        type="submit" 
+                        variant="contained" 
+                        endIcon={<SendIcon /> } 
+                        onClick={handleSend}
+                        sx={{
+                            width: '200px', 
+                            margin: 'auto'
+                        }}>
+                            <span className={styles.font_style}>{t('formSubmit')}</span>
                     </Button> }
                 </Box>
             </form>
         </Slide>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+            This is a success message!
+            </Alert>
+      </Snackbar>
    </Container>
  );
 };

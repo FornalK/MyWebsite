@@ -45,7 +45,7 @@ export default function ProjectCard({img, imgAlt, prNum}) {
           {prNum == 0 && <div>
             {t("Proj1Desc")} 
             <div style={{margin: '8px 0px'}}>
-            <a style={{textDecoration: 'none'}} href="https://github.com/FornalK/Kacper/blob/master/videoDynamicsV9/main.py">{t("Proj1Program")}</a>
+            <a style={{textDecoration: 'none'}} href="https://github.com/FornalK/VideoDynamics/blob/master/videoDynamicsV9/main.py">{t("Proj1Program")}</a>
             </div>
             {t("Proj1Articles")} 
             <span> </span>

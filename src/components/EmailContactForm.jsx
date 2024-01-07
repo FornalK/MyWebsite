@@ -15,6 +15,15 @@ const EmailContactForm = ({delay, formWidth, setter}) => {
  const form = useRef();
  const [showForm, setShowForm] = useState(false);
  const [focus, setFocus] = useState(0);
+ const [email, setEmail] = useState('');
+ const [title, setTitle] = useState('');
+ const [message, setMessage] = useState('');
+
+ const handleChange = (event, fieldNum) => {
+    if (fieldNum === 1) setEmail(event.target.value);
+    else if (fieldNum === 2) setTitle(event.target.value);
+    else if (fieldNum === 3) setMessage(event.target.value);
+  };
 
  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
@@ -42,7 +51,6 @@ const EmailContactForm = ({delay, formWidth, setter}) => {
     setter(num);
  }
 
-
  return (
     <Container>
         <Slide direction='up' in={showForm} mountOnEnter unmountOnExit>
@@ -62,6 +70,8 @@ const EmailContactForm = ({delay, formWidth, setter}) => {
                         label={t('formLabel1')}
                         color="primary"
                         focused 
+                        value={email}
+                        onChange={event => handleChange(event, 1)}
                         onFocus={() => changeFocus(1)} 
                         onBlur={() => changeFocus(0)} /> }
                     {(((focus == 0) || (focus == 2 && isMobile)) || (!isMobile)) && <TextField 
@@ -70,17 +80,20 @@ const EmailContactForm = ({delay, formWidth, setter}) => {
                         label={t('formLabel2')}
                         color="primary"
                         focused
+                        value={title}
+                        onChange={event => handleChange(event, 2)}
                         onFocus={() => changeFocus(2)}
                         onBlur={() => changeFocus(0)} /> }
                     {(((focus == 0) || (focus == 3 && isMobile)) || (!isMobile)) && <TextField 
                         type="text" 
                         name="message"
                         label={t('formLabel3')}
-
                         color="primary"
                         multiline
                         rows={5}
                         focused
+                        value={message}
+                        onChange={event => handleChange(event, 3)}
                         onFocus={() => changeFocus(3)}
                         onBlur={() => changeFocus(0)} /> }
                     {(((focus == 0) || (focus == 0 && isMobile)) || (!isMobile)) && <Button type="submit" variant="contained" endIcon={<SendIcon />}
